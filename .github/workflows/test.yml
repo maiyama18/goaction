@@ -1,0 +1,18 @@
+name: Test
+on: push
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: set up go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: get dependencies
+        run: go get -v -t -d ./...
+      - name: run tests
+        run: go test ./...
