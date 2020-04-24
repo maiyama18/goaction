@@ -6,7 +6,7 @@ func TestHello(t *testing.T) {
 	want := "Hello, world."
 	got := Hello()
 	if want != got {
-		t.Fatalf("test failed")
+		t.Fatalf("test failed. want=%q, got=%q", want, got)
 	}
 }
 
